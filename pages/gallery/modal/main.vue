@@ -29,6 +29,7 @@
 							<gallery-image
 								modal
 								:src="url.image"
+								:mcmeta="textureObj.mcmeta"
 								:textureID="textureID"
 								:ignoreList="ignoreList"
 								@click="openFullscreenPreview(url.image)"
