@@ -1,3 +1,5 @@
+// @ts-check
+
 import axios from "axios";
 
 // pages used in sidebar
@@ -13,11 +15,13 @@ import ReviewTranslationsPage from "../pages/translation/index.vue";
 import PostListPage from "../pages/post/post-grid.vue";
 import EditPostPage from "../pages/post/edit-post.vue";
 import NewPostPage from "../pages/post/new-post.vue";
-import ContributionPage from "../pages/contribution/index.vue";
-import UsersPage from "../pages/users/index.vue";
-import TexturePage from "../pages/texture/index.vue";
-import PackPage from "../pages/pack/index.vue";
-import SettingsPage from "../pages/settings/index.vue";
+import ContributionPage from "../pages/contribution/main.vue";
+import UsersPage from "../pages/users/main.vue";
+import TexturePage from "../pages/texture/main.vue";
+import ModsPage from "../pages/mods/main.vue";
+import ModpacksPage from "../pages/modpacks/main.vue";
+import PackPage from "../pages/pack/main.vue";
+import SettingsPage from "../pages/settings/main.vue";
 
 /** @type {import("resources/types.d.ts").SidebarTab[]} */
 export default [
@@ -170,6 +174,20 @@ export default [
 					{ path: "/textures", redirect: "/textures/all" },
 					{ path: "/textures/:tag?/:name*", component: TexturePage, name: "Textures" },
 				],
+			},
+			{
+				label: "mods",
+				icon: "mdi-cube-scan",
+				routes: [
+					{ path: "/mods", component: ModsPage, name: "Mods" },
+				]
+			},
+			{
+				label: "modpacks",
+				icon: "mdi-package-variant",
+				routes: [
+					{ path: "/modpacks", component: ModpacksPage, name: "Modpacks" },
+				]
 			},
 			{
 				label: "packs",
