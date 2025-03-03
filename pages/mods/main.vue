@@ -68,12 +68,8 @@ export default {
 				formData.append("files", file, file.name);
 			});
 
-			axios.post(`${this.$root.apiURL}/mods/upload`, formData, {
-				headers: {
-					...this.$root.apiOptions.headers,
-					"Content-Type": "multipart/form-data",
-				}
-			})
+			axios
+				.post(`${this.$root.apiURL}/mods/upload`, formData, this.$root.apiOptions)
 				.then((response) => {
 					console.log(response);
 				}).catch((error) => {
